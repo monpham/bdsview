@@ -1,0 +1,9 @@
+.chat-window{
+  position: fixed;
+  z-index: 99;
+  bottom: 0;
+  right: 0;
+  display: grid;
+
+  grid-template-columns: minmax(250px, 25%) 1fr;
+}

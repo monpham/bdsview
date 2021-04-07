@@ -1,0 +1,36 @@
+<div style="border-radius: 8px"  id="ng-chat-people"
+     [ngClass]="{'primary-outline-color': true, 'primary-background': true,'ng-chat-people-collapsed': isCollapsed}">
+  <a href="javascript:void(0);" style="background-color: rgba(0,0,0,0.3) !important; padding-right: 88px; padding-bottom: 4px; padding-top: 4px" class="ng-chat-title secondary-background shadowed" (click)="onChatTitleClicked()">
+	<span style="margin-left: 23.5px; color: white;  font-weight: bold; border-radius: 8px">
+			Danh Sách Chat
+		</span>
+  </a>
+  <div style="border-radius: 8px" class="ng-chat-people-actions" (click)="onFriendsListActionCancelClicked()">
+    <a href="javascript:void(0);" class="ng-chat-people-action">
+      <i class="remove-icon"></i>
+    </a>
+    <a href="javascript:void(0);" class="ng-chat-people-action" (click)="onFriendsListActionConfirmClicked()">
+      <i class="check-icon"></i>
+    </a>
+  </div>
+  <input *ngIf="searchEnabled" id="ng-chat-search_friend" class="friends-search-bar" type="search" placeholder="Search"
+         [(ngModel)]="searchInput"/>
+  <ul id="ng-chat-users" [ngClass]="{'offset-search': searchEnabled}">
+    <li *ngFor="let user of filteredParticipants">
+      <div *ngIf="storage.getUsername() !== user.user.username">
+<!--        <input-->
+<!--          type="checkbox"-->
+<!--          class="ng-chat-users-checkbox"-->
+<!--          (change)="onFriendsListCheckboxChange(user, $event.target.checked)"-->
+<!--          [checked]="isUserSelectedFromFriendsList(user)"/>-->
+        <div style="border-radius: 8px" (click)="onUserClick(user)">
+          <div *ngIf="!user.user.image" class="icon-wrapper">
+            <i class="user-icon"></i>
+          </div>
+          <img *ngIf="user.user.image" alt="" class="avatar" height="30" width="30" style="border-radius: 50%" [src]="user.user.image"/>
+          <strong title="{{user.user.fullName}}">{{user.user.fullName}}</strong>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

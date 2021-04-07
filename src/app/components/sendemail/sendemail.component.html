@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="cf-content">
+        <div class="cc-title">
+          <h4>{{'Enter your registered email'|translate}}</h4>
+        </div>
+        <form action="#" class="cc-form">
+          <div class="group-input">
+            <input name="email" [(ngModel)]="email" type="text" placeholder="{{'Email registered'|translate}}">
+          </div>
+        </form>
+        <button type="submit" class="site-btn" (click)="send(email)">{{'Confirm'|translate}}</button>
+      </div>
+    </div>
+  </div>
+</div>

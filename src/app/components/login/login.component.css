@@ -1,0 +1,11 @@
+
+a:hover {
+  color:#ff0000;
+  background-color:transparent;
+  text-decoration:underline;
+}
+a:active {
+  color:#ff0000;
+  background-color:transparent;
+  text-decoration:underline;
+}

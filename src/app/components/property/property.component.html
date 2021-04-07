@@ -1,0 +1,429 @@
+<!-- Property Details Section Begin -->
+<section class="property-details-section">
+  <div class="property-pic-slider owl-carousel">
+    <div class="ps-item">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="row">
+              <div class="col-lg-12 p-0">
+                <div class="ps-item-inner large-item set-bg"  data-setbg="assets/img/property/slider/ps-1.jpg"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="row">
+              <div class="col-sm-6 p-0">
+                <div class="ps-item-inner set-bg"  data-setbg="assets/img/property/slider/ps-2.jpg"></div>
+              </div>
+              <div class="col-sm-6 p-0">
+                <div class="ps-item-inner set-bg"  data-setbg="assets/img/property/slider/ps-2.jpg"></div>
+              </div>
+              <div class="col-sm-6 p-0">
+                <div class="ps-item-inner set-bg"  data-setbg="assets/img/property/slider/ps-4.jpg"></div>
+              </div>
+              <div class="col-sm-6 p-0">
+                <div class="ps-item-inner set-bg"  data-setbg="assets/img/property/slider/ps-5.jpg"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ps-item">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="row">
+              <div class="col-lg-12 p-0">
+                <div class="ps-item-inner large-item set-bg"  data-setbg="assets/img/property/slider/ps-1.jpg"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="row">
+              <div class="col-sm-6 p-0">
+                <div class="ps-item-inner set-bg"  data-setbg="assets/img/property/slider/ps-2.jpg"></div>
+              </div>
+              <div class="col-sm-6 p-0">
+                <div class="ps-item-inner set-bg"  data-setbg="assets/img/property/slider/ps-2.jpg"></div>
+              </div>
+              <div class="col-sm-6 p-0">
+                <div class="ps-item-inner set-bg"  data-setbg="assets/img/property/slider/ps-4.jpg"></div>
+              </div>
+              <div class="col-sm-6 p-0">
+                <div class="ps-item-inner set-bg"  data-setbg="assets/img/property/slider/ps-5.jpg"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="pd-text">
+          <div class="pt-5 mt-5">
+            <div id="containerPano" style="width:100%;height:100%;overflow:hidden;">
+              <br>Loading...<br><br>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6" *ngIf="property.id">
+              <div class="pd-title">
+                <div class="label">{{'Rent'|translate}}</div>
+                <div class="pt-price">{{property.giaTien | currency:"VND":"symbol"}} VNĐ<span>/{{'month'|translate}}</span></div>
+                <h3>{{property.tenSanPham}}</h3>
+                <p><span class="icon_pin_alt"></span> {{property.diaChi}}</p>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="pd-social">
+                <a routerLink="/"><i class="fa fa-mail-forward"></i></a>
+                <a routerLink="/"><i class="fa fa-send"></i></a>
+                <a routerLink="/"><i class="fa fa-heart"></i></a>
+                <a routerLink="/"><i class="fa fa-mail-forward"></i></a>
+                <a routerLink="/"><i class="fa fa-cloud-download"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="pd-board">
+            <div class="tab-board">
+              <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">{{'General'|translate}}</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">{{'Description'|translate}}</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">{{'Convenient'|translate}}</a>
+                </li>
+              </ul><!-- Tab panes -->
+              <div class="tab-content">
+                <div class="tab-pane active" id="tabs-1" role="tabpanel">
+                  <div class="tab-details">
+                    <ul class="left-table" *ngIf="property.id">
+                      <li>
+                        <span class="type-name">{{'Type'|translate}}</span>
+                        <span class="type-value">{{property.project.tenDuAn}}</span>
+                      </li>
+                      <li>
+                        <span class="type-name">{{'Number'|translate}}</span>
+                        <span class="type-value">#219</span>
+                      </li>
+                      <li>
+                        <span class="type-name">{{'Price'|translate}}</span>
+                        <span class="type-value">{{property.giaTien | currency:"VND":"symbol"}} / {{'month'|translate}}</span>
+                      </li>
+                      <li>
+                        <span class="type-name">{{'Build'|translate}}</span>
+                        <span class="type-value">{{property.ngayTao | date:'dd/MM/yyyy'}}</span>
+                      </li>
+                      <li>
+                        <span class="type-name">{{'Type of contract'|translate}}</span>
+                        <span class="type-value">Rent</span>
+                      </li>
+                      <li>
+                        <span class="type-name">Agent</span>
+                        <span class="type-value">Nguyễn Hữu Tài</span>
+                      </li>
+                    </ul>
+                    <ul class="right-table">
+                      <li>
+                        <span class="type-name">{{'Area'|translate}}</span>
+                        <span class="type-value">{{property.dienTich}} m2</span>
+                      </li>
+                      <li>
+                        <span class="type-name">{{'Room number'|translate}}</span>
+                        <span class="type-value">9</span>
+                      </li>
+                      <li>
+                        <span class="type-name">{{'Bathroom'|translate}}</span>
+                        <span class="type-value">4</span>
+                      </li>
+                      <li>
+                        <span class="type-name"> {{'Bedroom'|translate}}</span>
+                        <span class="type-value">3</span>
+                      </li>
+                      <li>
+                        <span class="type-name">Gara</span>
+                        <span class="type-value">2</span>
+                      </li>
+                      <li>
+                        <span class="type-name">{{'Parking the car'|translate}}</span>
+                        <span class="type-value">2</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="tab-pane" id="tabs-2" role="tabpanel">
+                </div>
+                <div class="tab-pane" id="tabs-3" role="tabpanel">
+                  <div class="tab-details">
+                    <ul class="left-table" *ngIf="property.id">
+                      <li>
+                        <span class="type-name">{{'Type'|translate}}</span>
+                        <span class="type-value">{{property.project.tenDuAn}}</span>
+                      </li>
+                      <li>
+                        <span class="type-name">{{'Number'|translate}}</span>
+                        <span class="type-value">#219</span>
+                      </li>
+                      <li>
+                        <span class="type-name">{{'Price'|translate}}</span>
+                        <span class="type-value">{{property.giaTien | currency:"VND":"symbol"}} / {{'month'|translate}}</span>
+                      </li>
+                      <li>
+                        <span class="type-name">{{'Build'|translate}}</span>
+                        <span class="type-value">{{property.ngayTao | date:'dd/MM/yyyy'}}</span>
+                      </li>
+                      <li>
+                        <span class="type-name">{{'Type of contract'|translate}}</span>
+                        <span class="type-value">Rent</span>
+                      </li>
+                      <li>
+                        <span class="type-name">Agent</span>
+                        <span class="type-value">Nguyễn Hữu Tài</span>
+                      </li>
+                    </ul>
+                    <ul class="right-table">
+                      <li>
+                        <span class="type-name">{{'Area'|translate}}</span>
+                        <span class="type-value">{{property.dienTich}} m2</span>
+                      </li>
+                      <li>
+                        <span class="type-name">{{'Room number'|translate}}</span>
+                        <span class="type-value">9</span>
+                      </li>
+                      <li>
+                        <span class="type-name">{{'Bathroom'|translate}}</span>
+                        <span class="type-value">4</span>
+                      </li>
+                      <li>
+                        <span class="type-name"> {{'Bedroom'|translate}}</span>
+                        <span class="type-value">3</span>
+                      </li>
+                      <li>
+                        <span class="type-name">Gara</span>
+                        <span class="type-value">2</span>
+                      </li>
+                      <li>
+                        <span class="type-name">{{'Parking the car'|translate}}</span>
+                        <span class="type-value">2</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pd-widget">
+            <h4>{{'View All'|translate}}</h4>
+            <div class="container" #container>
+              <div [innerHTML]=htmlTemplate></div>
+            </div>
+          </div>
+          <div class="pd-widget">
+            <h4>{{'Location on map'|translate}}</h4>
+            <div class="map">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.7838808890156!2d108.18390771470179!3d16.024762044884977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3142197ef556b01b%3A0xc67894c8531ff2f5!2zMTM1IFbFqSBMxINuZywgSG_DoCBQaMOhdCwgQ-G6qW0gTOG7hywgxJDDoCBO4bq1bmcsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1597017904926!5m2!1svi!2s" width="600" height="350" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+            <div class="map-location">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="ml-item">
+                    <div class="ml-single-item">
+                      <h6>Hospital <span>( <i class="fa fa-location-arrow"></i> 5 km )</span></h6>
+                      <p>Portland Ave Rochester, NY 14621</p>
+                    </div>
+                    <div class="ml-single-item">
+                      <h6>Schools <span>( <i class="fa fa-location-arrow"></i> 8 km )</span></h6>
+                      <p>Cragin Elementary School</p>
+                    </div>
+                    <div class="ml-single-item">
+                      <h6>Store <span>( <i class="fa fa-location-arrow"></i> 2 km )</span></h6>
+                      <p>Exceptional Shoes & Clothing</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="ml-item">
+                    <div class="ml-single-item">
+                      <h6>Laundry <span>( <i class="fa fa-location-arrow"></i> 3 km )</span></h6>
+                      <p>Besst at laundry</p>
+                    </div>
+                    <div class="ml-single-item">
+                      <h6>Health <span>( <i class="fa fa-location-arrow"></i> 5 km )</span></h6>
+                      <p>Boomerang Barber & Beauty</p>
+                    </div>
+                    <div class="ml-single-item">
+                      <h6>Health <span>( <i class="fa fa-location-arrow"></i> 5 km )</span></h6>
+                      <p>Boomerang Barber & Beauty</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<!--          <div class="pd-widget">-->
+<!--            <h4>Agent</h4>-->
+<!--            <div class="pd-agent">-->
+<!--              <div class="agent-pic">-->
+<!--                <img src="assets/img/property/details/agent.jpg" alt="">-->
+<!--              </div>-->
+<!--              <div class="agent-text">-->
+<!--                <div class="at-title">-->
+<!--                  <h6>Nguyễn Hữu Tài</h6>-->
+<!--                  <span>Founder & CEO</span>-->
+<!--                  <a routerLink="/" class="primary-btn">VIew profile</a>-->
+<!--                </div>-->
+<!--                <p>Lorem ipsum dolor sit amet, consectetur adipis cing elit, eiusmod tempor incididunt</p>-->
+<!--                <div class="at-option">-->
+<!--                  <div class="at-number">123-455-688</div>-->
+<!--                  <div class="at-social">-->
+<!--                    <a routerLink="/"><i class="fa fa-facebook"></i></a>-->
+<!--                    <a routerLink="/"><i class="fa fa-twitter"></i></a>-->
+<!--                    <a routerLink="/"><i class="fa fa-envelope-o"></i></a>-->
+<!--                  </div>-->
+<!--                </div>-->
+
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+          <div class="pd-widget">
+            <h4>02 {{'Review'|translate}}</h4>
+            <div class="pd-review">
+              <div class="pr-item">
+                <div class="pr-avatar">
+                  <div class="pr-pic">
+                    <img src="assets/img/property/details/review/review-1.jpg" alt="">
+                  </div>
+                  <div class="pr-text">
+                    <h6>Đỗ Văn Hiển</h6>
+                    <span>15/05/2020</span>
+                    <div class="pr-rating">
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                    </div>
+                  </div>
+                </div>
+                <p>Tôi thấy dự án đẹp tôi có thể tham quan vào 1 ngày được không</p>
+              </div>
+              <div class="pr-item">
+                <div class="pr-avatar">
+                  <div class="pr-pic">
+                    <img src="assets/img/property/details/review/review-2.jpg" alt="">
+                  </div>
+                  <div class="pr-text">
+                    <h6>Trương Thế Công</h6>
+                    <span>15/05/2020</span>
+                    <div class="pr-rating">
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                    </div>
+                  </div>
+                </div>
+                <p>Ngôi nhà đẹp và ổn</p>
+              </div>
+            </div>
+          </div>
+          <div class="pd-widget">
+            <h4>{{'Your review'|translate}}</h4>
+            <form action="#" class="review-form">
+              <div class="group-input">
+                <input type="text" placeholder="{{'Name'|translate}}">
+                <input type="text" placeholder="Email">
+                <input type="text" placeholder="{{'Phone Number'|translate}}">
+              </div>
+              <textarea placeholder="{{'Comment'|translate}}"></textarea>
+              <div class="rating">
+                <span>Your Rating:</span>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <button type="submit" class="site-btn">{{'Send'|translate}}</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="property-sidebar">
+          <div class="single-sidebar">
+            <div class="section-title sidebar-title">
+              <h5>{{'Contact consultant'|translate}}</h5>
+            </div>
+            <div class="top-agent">
+              <div class="ta-item">
+                <div class="ta-pic set-bg"  data-setbg="assets/img/property/details/sidebar/ta-1.jpg"></div>
+                <div class="ta-text">
+                  <h6><a routerLink="/">Nguyễn Hữu Tài</a></h6>
+                  <span>Team Leader</span>
+                  <div class="ta-num">123-455-688</div>
+                </div>
+              </div>
+              <div class="ta-item">
+                <div class="ta-pic set-bg"  data-setbg="assets/img/property/details/sidebar/ta-2.jpg"></div>
+                <div class="ta-text">
+                  <h6><a routerLink="/">Nguyễn Hữu Tài</a></h6>
+                  <span>Team Leader</span>
+                  <div class="ta-num">123-455-688</div>
+                </div>
+              </div>
+              <div class="ta-item">
+                <div class="ta-pic set-bg"  data-setbg="assets/img/property/details/sidebar/ta-3.jpg"></div>
+                <div class="ta-text">
+                  <h6><a routerLink="/">Nguyễn Hữu Tài</a></h6>
+                  <span>Team Leader</span>
+                  <div class="ta-num">123-455-688</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="single-sidebar slider-op">
+            <div class="section-title sidebar-title">
+              <h5>{{'Outstanding type'|translate}}</h5>
+            </div>
+            <div class="sf-slider owl-carousel">
+              <div class="sf-item set-bg"  data-setbg="assets/img/categories/cat-1.jpg">
+                <div class="sf-text">
+                  <h5>{{'House'}}</h5>
+                  <span>38 {{'real estate'|translate}}</span>
+                </div>
+              </div>
+              <div class="sf-item set-bg"  data-setbg="assets/img/categories/cat-2.jpg">
+                <div class="sf-text">
+                  <h5>{{'Apartment'|translate}}</h5>
+                  <span>238 {{'real estate'|translate}}</span>
+                </div>
+              </div>
+              <div class="sf-item set-bg"  data-setbg="assets/img/categories/cat-3.jpg">
+                <div class="sf-text">
+                  <h5>Villa</h5>
+                  <span>230 {{'real estate'|translate}}</span>
+                </div>
+              </div>
+              <div class="sf-item set-bg"  data-setbg="assets/img/categories/cat-4.jpg">
+                <div class="sf-text">
+                  <h5>{{'Restaurant'|translate}}</h5>
+                  <span>38 {{'real estate'|translate}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

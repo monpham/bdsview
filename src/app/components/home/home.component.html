@@ -1,0 +1,689 @@
+<!-- Hero Section Begin -->
+
+<section class="hero-section">
+  <div class="container">
+    <div class="hs-slider owl-carousel">
+      <div class="hs-item set-bg" *ngFor="let item of properties" [attr.data-setbg]="item.image">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="hc-inner-text">
+              <div class="hc-text">
+                <h4 (click)="previewDetailProduct(item.id)">{{item.tenSanPham}}</h4>
+                <p><span class="icon_pin_alt"></span> {{item.diaChi}}</p>
+                <div class="label">Rao bán</div>
+                <h5>{{item.giaTien | currency:"VND":"symbol"}}<span> / tháng</span></h5>
+              </div>
+              <div class="hc-widget">
+                <ul>
+                  <li><i class="fa fa-object-group"></i> 2,283</li>
+                  <li><i class="fa fa-bathtub"></i> 02</li>
+                  <li><i class="fa fa-bed"></i> 02</li>
+                  <li><i class="fa fa-automobile"></i> 01</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hs-item set-bg" *ngFor="let item of properties" [attr.data-setbg]="item.image">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="hc-inner-text">
+              <div class="hc-text">
+                <h4>{{item.tenSanPham}}</h4>
+                <p><span class="icon_pin_alt"></span>{{item.diaChi}}</p>
+                <div class="label">Rao bán</div>
+                <h5>{{item.giaTien | currency:"VND":"symbol"}}<span> / tháng</span></h5>
+              </div>
+              <div class="hc-widget">
+                <ul>
+                  <li><i class="fa fa-object-group"></i> 2,283</li>
+                  <li><i class="fa fa-bathtub"></i> 01</li>
+                  <li><i class="fa fa-bed"></i> 03</li>
+                  <li><i class="fa fa-automobile"></i> 01</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Hero Section End -->
+
+<!-- Search Section Begin -->
+<!--<section class="search-section spad">-->
+<!--  <div class="container">-->
+<!--    <div class="row">-->
+<!--      <div class="col-lg-7">-->
+<!--        <div class="section-title">-->
+<!--          <h4>Tìm kiếm</h4>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="col-lg-5">-->
+<!--        <div class="change-btn">-->
+<!--          <div class="cb-item">-->
+<!--            <label for="cb-rent" class="active">-->
+<!--              Cho thuê-->
+<!--              <input type="radio" id="cb-rent">-->
+<!--            </label>-->
+<!--          </div>-->
+<!--          <div class="cb-item">-->
+<!--            <label for="cb-sale">-->
+<!--              Rao bán-->
+<!--              <input type="radio" id="cb-sale">-->
+<!--            </label>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="search-form-content">-->
+<!--      <form action="#" class="filter-form">-->
+<!--        <select class="sm-width">-->
+<!--          <option value="">Chọn thành phố</option>-->
+<!--        </select>-->
+<!--        <select class="sm-width">-->
+<!--          <option value="">Khu vực (Xã - Quận/Huyện)</option>-->
+<!--        </select>-->
+<!--        <select class="sm-width">-->
+<!--          <option value="">Trạng thái</option>-->
+<!--        </select>-->
+<!--        <select class="sm-width">-->
+<!--          <option value="">Loại hình</option>-->
+<!--        </select>-->
+<!--        <select class="sm-width">-->
+<!--          <option value="">Số phòng</option>-->
+<!--        </select>-->
+<!--        <select class="sm-width" disabled>-->
+<!--          <option value="">Khác</option>-->
+<!--        </select>-->
+<!--        <div class="room-size-range-wrap sm-width">-->
+<!--          <div class="price-text">-->
+<!--            <label for="roomsizeRange">Diện tích:</label>-->
+<!--            <input type="text" id="roomsizeRange" readonly>-->
+<!--          </div>-->
+<!--          <div id="roomsize-range" class="slider"></div>-->
+<!--        </div>-->
+<!--        <div class="price-range-wrap sm-width">-->
+<!--          <div class="price-text">-->
+<!--            <label for="priceRange">Giá:</label>-->
+<!--            <input type="text" id="priceRange" readonly>-->
+<!--          </div>-->
+<!--          <div id="price-range" class="slider"></div>-->
+<!--        </div>-->
+<!--        <button type="button" class="search-btn sm-width">Tìm kiếm</button>-->
+<!--      </form>-->
+<!--    </div>-->
+<!--    <div class="more-option">-->
+<!--      <div class="accordion" id="accordionExample">-->
+<!--        <div class="card">-->
+<!--          &lt;!&ndash;          <div class="card-heading active">&ndash;&gt;-->
+<!--          &lt;!&ndash;            <a data-toggle="collapse" data-target="#collapseOne">&ndash;&gt;-->
+<!--          &lt;!&ndash;              Các lựa chọn tìm kiếm khác&ndash;&gt;-->
+<!--          &lt;!&ndash;            </a>&ndash;&gt;-->
+<!--          &lt;!&ndash;          </div>&ndash;&gt;-->
+<!--          <div id="collapseOne" class="collapse" data-parent="#accordionExample">-->
+<!--            <div class="card-body">-->
+<!--              <div class="mo-list">-->
+<!--                <div class="ml-column">-->
+<!--                  <label for="air">Air conditioning-->
+<!--                    <input type="checkbox" id="air">-->
+<!--                    <span class="checkbox"></span>-->
+<!--                  </label>-->
+<!--                  <label for="lundry">Laundry-->
+<!--                    <input type="checkbox" id="lundry">-->
+<!--                    <span class="checkbox"></span>-->
+<!--                  </label>-->
+<!--                  <label for="refrigerator">Refrigerator-->
+<!--                    <input type="checkbox" id="refrigerator">-->
+<!--                    <span class="checkbox"></span>-->
+<!--                  </label>-->
+<!--                  <label for="washer">Washer-->
+<!--                    <input type="checkbox" id="washer">-->
+<!--                    <span class="checkbox"></span>-->
+<!--                  </label>-->
+<!--                </div>-->
+<!--                <div class="ml-column">-->
+<!--                  <label for="barbeque">Barbeque-->
+<!--                    <input type="checkbox" id="barbeque">-->
+<!--                    <span class="checkbox"></span>-->
+<!--                  </label>-->
+<!--                  <label for="lawn">Lawn-->
+<!--                    <input type="checkbox" id="lawn">-->
+<!--                    <span class="checkbox"></span>-->
+<!--                  </label>-->
+<!--                  <label for="sauna">Sauna-->
+<!--                    <input type="checkbox" id="sauna">-->
+<!--                    <span class="checkbox"></span>-->
+<!--                  </label>-->
+<!--                  <label for="wifi">Wifi-->
+<!--                    <input type="checkbox" id="wifi">-->
+<!--                    <span class="checkbox"></span>-->
+<!--                  </label>-->
+<!--                </div>-->
+<!--                <div class="ml-column">-->
+<!--                  <label for="dryer">Dryer-->
+<!--                    <input type="checkbox" id="dryer">-->
+<!--                    <span class="checkbox"></span>-->
+<!--                  </label>-->
+<!--                  <label for="microwave">Microwave-->
+<!--                    <input type="checkbox" id="microwave">-->
+<!--                    <span class="checkbox"></span>-->
+<!--                  </label>-->
+<!--                  <label for="pool">Swimming Pool-->
+<!--                    <input type="checkbox" id="pool">-->
+<!--                    <span class="checkbox"></span>-->
+<!--                  </label>-->
+<!--                  <label for="window">Window Coverings-->
+<!--                    <input type="checkbox" id="window">-->
+<!--                    <span class="checkbox"></span>-->
+<!--                  </label>-->
+<!--                </div>-->
+<!--                <div class="ml-column last-column">-->
+<!--                  <label for="gym">Gym-->
+<!--                    <input type="checkbox" id="gym">-->
+<!--                    <span class="checkbox"></span>-->
+<!--                  </label>-->
+<!--                  <label for="shower">OutdoorShower-->
+<!--                    <input type="checkbox" id="shower">-->
+<!--                    <span class="checkbox"></span>-->
+<!--                  </label>-->
+<!--                  <label for="tv">Tv Cable-->
+<!--                    <input type="checkbox" id="tv">-->
+<!--                    <span class="checkbox"></span>-->
+<!--                  </label>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+<!-- Search Section End -->
+
+<!-- Property Section Begin -->
+<section class="property-section latest-property-section spad">
+  <div class="container" style="margin-top: 50px">
+    <div class="row">
+      <div class="col-lg-5">
+        <div class="section-title">
+          <h4>Bất động sản nổi bật</h4>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <div class="property-controls">
+          <ul>
+            <li routerLink="/property/list-properties">Tất cả</li>
+            <li *ngFor="let item of projects" (click)="privew(item.id)">{{item.tenDuAn}}</li>
+            <!--            <li data-filter=".house">Nhà</li>-->
+            <!--            <li data-filter=".office">Văn phòng</li>-->
+            <!--            <li data-filter=".hotel">Khách sạn</li>-->
+            <!--            <li data-filter=".restaurent">Nhà hàng</li>-->
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row property-filter">
+      <div class="col-lg-4 col-md-6 mix all" *ngFor="let item of products">
+        <div class="property-item">
+          <div class="pi-pic set-bg" [attr.data-setbg]="item.image" (click)="previewDetailProduct(item.id)">
+            <div class="label">Rao bán</div>
+          </div>
+          <div class="pi-text">
+            <div class="pt-price">{{item.giaTien | currency:"VND":"symbol"}}<span> / tháng</span></div>
+            <h5><a routerLink="/" (click)="previewDetailProduct(item.id)">{{item.tenSanPham}}</a></h5>
+            <p><span class="icon_pin_alt"></span> {{item.diaChi}}</p>
+            <ul>
+              <li><i class="fa fa-object-group"></i> 2, 283</li>
+              <li><i class="fa fa-bathtub"></i> 03</li>
+              <li><i class="fa fa-bed"></i> 05</li>
+              <li><i class="fa fa-automobile"></i> 01</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!--      <div class="col-lg-4 col-md-6 mix apart">-->
+      <!--        <div class="property-item">-->
+      <!--          <div class="pi-pic set-bg" data-setbg="assets/img/property/property-2.jpg">-->
+      <!--            <div class="label">Rao bán</div>-->
+      <!--          </div>-->
+      <!--          <div class="pi-text">-->
+      <!--            <a routerLink="/" class="heart-icon"><span class="icon_heart_alt"></span></a>-->
+      <!--            <div class="pt-price">289.0 VNĐ<span>/tháng</span></div>-->
+      <!--            <h5><a routerLink="/">Vrindavan Flora</a></h5>-->
+      <!--            <p><span class="icon_pin_alt"></span>135/6, Vũ Lăng, Cẩm Lệ, Đà Nẵng</p>-->
+      <!--            <ul>-->
+      <!--              <li><i class="fa fa-object-group"></i> 2, 283</li>-->
+      <!--              <li><i class="fa fa-bathtub"></i> 03</li>-->
+      <!--              <li><i class="fa fa-bed"></i> 05</li>-->
+      <!--              <li><i class="fa fa-automobile"></i> 01</li>-->
+      <!--            </ul>-->
+      <!--          </div>-->
+      <!--        </div>-->
+      <!--      </div>-->
+      <!--      <div class="col-lg-4 col-md-6 mix restaurent hotel">-->
+      <!--        <div class="property-item">-->
+      <!--          <div class="pi-pic set-bg" data-setbg="assets/img/property/property-2.jpg">-->
+      <!--            <div class="label c-red">Cho thuê</div>-->
+      <!--          </div>-->
+      <!--          <div class="pi-text">-->
+      <!--            <a routerLink="/" class="heart-icon"><span class="icon_heart_alt"></span></a>-->
+      <!--            <div class="pt-price">VNĐ 289.0</div>-->
+      <!--            <h5><a routerLink="/">Vrindavan Flora</a></h5>-->
+      <!--            <p><span class="icon_pin_alt"></span> 135/6, Vũ Lăng, Cẩm Lệ, Đà Nẵng</p>-->
+      <!--            <ul>-->
+      <!--              <li><i class="fa fa-object-group"></i> 2, 283</li>-->
+      <!--              <li><i class="fa fa-bathtub"></i> 03</li>-->
+      <!--              <li><i class="fa fa-bed"></i> 05</li>-->
+      <!--              <li><i class="fa fa-automobile"></i> 01</li>-->
+      <!--            </ul>-->
+      <!--&lt;!&ndash;            <div class="pi-agent">&ndash;&gt;-->
+      <!--&lt;!&ndash;              <div class="pa-item">&ndash;&gt;-->
+      <!--&lt;!&ndash;                <div class="pa-info">&ndash;&gt;-->
+      <!--&lt;!&ndash;                  <img src="assets/img/property/posted-by/pb-1.jpg" alt="">&ndash;&gt;-->
+      <!--&lt;!&ndash;                  <h6>Nguyễn Hữu Tài</h6>&ndash;&gt;-->
+      <!--&lt;!&ndash;                </div>&ndash;&gt;-->
+      <!--&lt;!&ndash;                <div class="pa-text">&ndash;&gt;-->
+      <!--&lt;!&ndash;                  123-455-688&ndash;&gt;-->
+      <!--&lt;!&ndash;                </div>&ndash;&gt;-->
+      <!--&lt;!&ndash;              </div>&ndash;&gt;-->
+      <!--&lt;!&ndash;            </div>&ndash;&gt;-->
+      <!--          </div>-->
+      <!--        </div>-->
+      <!--      </div>-->
+      <!--      <div class="col-lg-4 col-md-6 mix hotel restaruent">-->
+      <!--        <div class="property-item">-->
+      <!--          <div class="pi-pic set-bg" data-setbg="assets/img/property/property-4.jpg">-->
+      <!--            <div class="label c-red">Rao bán</div>-->
+      <!--          </div>-->
+      <!--          <div class="pi-text">-->
+      <!--            <a routerLink="/" class="heart-icon"><span class="icon_heart_alt"></span></a>-->
+      <!--            <div class="pt-price">VNĐ 289.0</div>-->
+      <!--            <h5><a routerLink="/">Shramik Vaibhav</a></h5>-->
+      <!--            <p><span class="icon_pin_alt"></span> 135/6, Vũ Lăng, Cẩm Lệ, Đà Nẵng</p>-->
+      <!--            <ul>-->
+      <!--              <li><i class="fa fa-object-group"></i> 2, 283</li>-->
+      <!--              <li><i class="fa fa-bathtub"></i> 03</li>-->
+      <!--              <li><i class="fa fa-bed"></i> 05</li>-->
+      <!--              <li><i class="fa fa-automobile"></i> 01</li>-->
+      <!--            </ul>-->
+      <!--&lt;!&ndash;            <div class="pi-agent">&ndash;&gt;-->
+      <!--&lt;!&ndash;              <div class="pa-item">&ndash;&gt;-->
+      <!--&lt;!&ndash;                <div class="pa-info">&ndash;&gt;-->
+      <!--&lt;!&ndash;                  <img src="assets/img/property/posted-by/pb-1.jpg" alt="">&ndash;&gt;-->
+      <!--&lt;!&ndash;                  <h6>Nguyễn Hữu Tài</h6>&ndash;&gt;-->
+      <!--&lt;!&ndash;                </div>&ndash;&gt;-->
+      <!--&lt;!&ndash;                <div class="pa-text">&ndash;&gt;-->
+      <!--&lt;!&ndash;                  123-455-688&ndash;&gt;-->
+      <!--&lt;!&ndash;                </div>&ndash;&gt;-->
+      <!--&lt;!&ndash;              </div>&ndash;&gt;-->
+      <!--&lt;!&ndash;            </div>&ndash;&gt;-->
+      <!--          </div>-->
+      <!--        </div>-->
+      <!--      </div>-->
+      <!--      <div class="col-lg-4 col-md-6 mix office hotel">-->
+      <!--        <div class="property-item">-->
+      <!--          <div class="pi-pic set-bg" data-setbg="assets/img/property/property-5.jpg">-->
+      <!--            <div class="label c-magenta">Rao bán</div>-->
+      <!--          </div>-->
+      <!--          <div class="pi-text">-->
+      <!--            <a routerLink="/" class="heart-icon"><span class="icon_heart_alt"></span></a>-->
+      <!--            <div class="pt-price">VNĐ 289.0</div>-->
+      <!--            <h5><a routerLink="/">Poddar Wondercity</a></h5>-->
+      <!--            <p><span class="icon_pin_alt"></span> 135/6, Vũ Lăng, Cẩm Lệ, Đà Nẵng</p>-->
+      <!--            <ul>-->
+      <!--              <li><i class="fa fa-object-group"></i> 2, 283</li>-->
+      <!--              <li><i class="fa fa-bathtub"></i> 03</li>-->
+      <!--              <li><i class="fa fa-bed"></i> 05</li>-->
+      <!--              <li><i class="fa fa-automobile"></i> 01</li>-->
+      <!--            </ul>-->
+      <!--&lt;!&ndash;            <div class="pi-agent">&ndash;&gt;-->
+      <!--&lt;!&ndash;              <div class="pa-item">&ndash;&gt;-->
+      <!--&lt;!&ndash;                <div class="pa-info">&ndash;&gt;-->
+      <!--&lt;!&ndash;                  <img src="assets/img/property/posted-by/pb-1.jpg" alt="">&ndash;&gt;-->
+      <!--&lt;!&ndash;                  <h6>Nguyễn Hữu Tài</h6>&ndash;&gt;-->
+      <!--&lt;!&ndash;                </div>&ndash;&gt;-->
+      <!--&lt;!&ndash;                <div class="pa-text">&ndash;&gt;-->
+      <!--&lt;!&ndash;                  123-455-688&ndash;&gt;-->
+      <!--&lt;!&ndash;                </div>&ndash;&gt;-->
+      <!--&lt;!&ndash;              </div>&ndash;&gt;-->
+      <!--&lt;!&ndash;            </div>&ndash;&gt;-->
+      <!--          </div>-->
+      <!--        </div>-->
+      <!--      </div>-->
+      <!--      <div class="col-lg-4 col-md-6 mix house apart office">-->
+      <!--        <div class="property-item">-->
+      <!--          <div class="pi-pic set-bg" data-setbg="assets/img/property/property-6.jpg">-->
+      <!--            <div class="label">Cho thuê</div>-->
+      <!--          </div>-->
+      <!--          <div class="pi-text">-->
+      <!--            <a routerLink="/" class="heart-icon"><span class="icon_heart_alt"></span></a>-->
+      <!--            <div class="pt-price">VNĐ 289.0<span>/tháng</span></div>-->
+      <!--            <h5><a routerLink="/">GoldCrest Residency</a></h5>-->
+      <!--            <p><span class="icon_pin_alt"></span> 135/6, Vũ Lăng, Cẩm Lệ, Đà Nẵng</p>-->
+      <!--            <ul>-->
+      <!--              <li><i class="fa fa-object-group"></i> 2, 283</li>-->
+      <!--              <li><i class="fa fa-bathtub"></i> 03</li>-->
+      <!--              <li><i class="fa fa-bed"></i> 05</li>-->
+      <!--              <li><i class="fa fa-automobile"></i> 01</li>-->
+      <!--            </ul>-->
+      <!--&lt;!&ndash;            <div class="pi-agent">&ndash;&gt;-->
+      <!--&lt;!&ndash;              <div class="pa-item">&ndash;&gt;-->
+      <!--&lt;!&ndash;                <div class="pa-info">&ndash;&gt;-->
+      <!--&lt;!&ndash;                  <img src="assets/img/property/posted-by/pb-1.jpg" alt="">&ndash;&gt;-->
+      <!--&lt;!&ndash;                  <h6>Nguyễn Hữu Tài</h6>&ndash;&gt;-->
+      <!--&lt;!&ndash;                </div>&ndash;&gt;-->
+      <!--&lt;!&ndash;                <div class="pa-text">&ndash;&gt;-->
+      <!--&lt;!&ndash;                  123-455-688&ndash;&gt;-->
+      <!--&lt;!&ndash;                </div>&ndash;&gt;-->
+      <!--&lt;!&ndash;              </div>&ndash;&gt;-->
+      <!--&lt;!&ndash;            </div>&ndash;&gt;-->
+      <!--          </div>-->
+      <!--        </div>-->
+      <!--      </div>-->
+    </div>
+  </div>
+</section>
+<!-- Property Section End -->
+
+<!-- Chooseus Section Begin -->
+<section class="chooseus-section spad set-bg" data-setbg="assets/img/chooseus/chooseus-bg.jpg">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="chooseus-text">
+          <div class="section-title">
+            <h4>Tại sao nên chọn chúng tôi?</h4>
+          </div>
+          <p>Gần 90% người đầu tư luôn tin tưởng vào BDS khi có nhu cầu mua bán và trao đổi bất động sản.</p>
+        </div>
+        <div class="chooseus-features">
+          <div class="cf-item">
+            <div class="cf-pic">
+              <img src="assets/img/chooseus/chooseus-icon-1.png" alt="">
+            </div>
+            <div class="cf-text">
+              <h5>Tìm kiếm thật dễ dàng</h5>
+              <p>Chúng tôi sẽ giúp bạn tìm căn nhà mơ ước của mình.</p>
+            </div>
+          </div>
+          <div class="cf-item">
+            <div class="cf-pic">
+              <img src="assets/img/chooseus/chooseus-icon-2.png" alt="">
+            </div>
+            <div class="cf-text">
+              <h5>Mua hoặc thuê nhà</h5>
+              <p>Chúng tôi có hàng triệu căn nhà tại các thành phố mà bạn yêu thích.</p>
+            </div>
+          </div>
+          <div class="cf-item">
+            <div class="cf-pic">
+              <img src="assets/img/chooseus/chooseus-icon-3.png" alt="">
+            </div>
+            <div class="cf-text">
+              <h5>Các chuyên gia bất động sản có kinh nghiệm</h5>
+              <p>Tìm kiếm các chuyên gia tư vấn về điều mà bạn mong muốn một cách dễ dàng.</p>
+            </div>
+          </div>
+          <div class="cf-item">
+            <div class="cf-pic">
+              <img src="assets/img/chooseus/chooseus-icon-4.png" alt="">
+            </div>
+            <div class="cf-text">
+              <h5>Danh sách bất động sản của bạn</h5>
+              <p>Hãy đăng ký ngay bây giờ để bán hoặc cho thuê bất động sản của bạn.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Chooseus Section End -->
+
+<!-- Feature Property Section Begin -->
+<section class="feature-property-section spad">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 p-0">
+        <div class="feature-property-left">
+          <div class="section-title">
+            <h4>Các loại hình</h4>
+          </div>
+          <ul>
+            <li *ngFor="let item of projects" (click)="privew(item.id)">{{item.tenDuAn}}</li>
+          </ul>
+          <a routerLink="/property/list-properties">Xem tất cả</a>
+        </div>
+      </div>
+      <div class="col-lg-8 p-0">
+        <div class="fp-slider owl-carousel">
+          <div class="fp-item set-bg" *ngFor="let item of properties" [attr.data-setbg]="item.image">
+            <div class="fp-text">
+              <h5 class="title" (click)="previewDetailProduct(item.id)">{{item.tenSanPham}}</h5>
+              <p><span class="icon_pin_alt"></span> {{item.diaChi}}</p>
+              <div class="label">Rao bán</div>
+              <h5>{{item.giaTien | currency:"VND":"symbol"}}<span> / tháng</span></h5>
+              <ul>
+                <li><i class="fa fa-object-group"></i> 2, 283</li>
+                <li><i class="fa fa-bathtub"></i> 03</li>
+                <li><i class="fa fa-bed"></i> 05</li>
+                <li><i class="fa fa-automobile"></i> 01</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Feature Property Section End -->
+
+<!-- Team Section Begin -->
+<!--<section class="team-section spad">-->
+<!--  <div class="container">-->
+<!--    <div class="row">-->
+<!--      <div class="col-lg-8 col-md-8">-->
+<!--        <div class="section-title">-->
+<!--          <h4>Các chuyên gia hàng đầu</h4>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="col-lg-4 col-md-4">-->
+<!--        <div class="team-btn">-->
+<!--          <a routerLink="/agent"><i class="fa fa-user"></i> Xem tất cả</a>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="row">-->
+<!--      <div class="col-md-4">-->
+<!--        <div class="ts-item">-->
+<!--          <div class="ts-text">-->
+<!--            <img src="assets/img/team/team-1.jpg" alt="">-->
+<!--            <h5>Đỗ Văn liêm</h5>-->
+<!--            <span>123-455-688</span>-->
+<!--            <p>Ipsum dolor amet, consectetur adipiscing elit, eiusmod tempor incididunt lorem.</p>-->
+<!--            <div class="ts-social">-->
+<!--              <a routerLink="/"><i class="fa fa-facebook"></i></a>-->
+<!--              <a routerLink="/"><i class="fa fa-twitter"></i></a>-->
+<!--              <a routerLink="/"><i class="fa fa-envelope-o"></i></a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="col-md-4">-->
+<!--        <div class="ts-item">-->
+<!--          <div class="ts-text">-->
+<!--            <img src="assets/img/team/team-2.jpg" alt="">-->
+<!--            <h5>Phan Văn Vũ</h5>-->
+<!--            <span>123-455-688</span>-->
+<!--            <p>Ipsum dolor amet, consectetur adipiscing elit, eiusmod tempor incididunt lorem.</p>-->
+<!--            <div class="ts-social">-->
+<!--              <a routerLink="/"><i class="fa fa-facebook"></i></a>-->
+<!--              <a routerLink="/"><i class="fa fa-twitter"></i></a>-->
+<!--              <a routerLink="/"><i class="fa fa-envelope-o"></i></a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="col-md-4">-->
+<!--        <div class="ts-item">-->
+<!--          <div class="ts-text">-->
+<!--            <img src="assets/img/team/team-3.jpg" alt="">-->
+<!--            <h5>Nguyễn Hữu Tài</h5>-->
+<!--            <span>123-455-688</span>-->
+<!--            <p>Ipsum dolor amet, consectetur adipiscing elit, eiusmod tempor incididunt lorem.</p>-->
+<!--            <div class="ts-social">-->
+<!--              <a routerLink="/"><i class="fa fa-facebook"></i></a>-->
+<!--              <a routerLink="/"><i class="fa fa-twitter"></i></a>-->
+<!--              <a routerLink="/"><i class="fa fa-envelope-o"></i></a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+<!-- Team Section End -->
+
+<!-- Categories Section Begin -->
+<section class="categories-section">
+  <div class="cs-item-list">
+    <div class="cs-item set-bg" *ngFor="let item of countProuct" [attr.data-setbg]="item[2]">
+      <div class="cs-text">
+        <h5>{{item[0]}}</h5>
+        <span>{{item[1]}} bất động sản</span>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Categories Section End -->
+
+<!-- Testimonial Section Begin -->
+<!--<section class="testimonial-section spad">-->
+<!--  <div class="container">-->
+<!--    <div class="row">-->
+<!--      <div class="col-lg-12">-->
+<!--        <div class="section-title">-->
+<!--          <h4>Đánh giá của khách hàng</h4>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="row testimonial-slider owl-carousel">-->
+<!--      <div class="col-lg-6">-->
+<!--        <div class="testimonial-item">-->
+<!--          <div class="ti-text">-->
+<!--            <p>Lorem ipsum dolor amet, consectetur adipiscing elit, seiusmod tempor incididunt ut labore-->
+<!--              magna aliqua. Quis ipsum suspendisse ultrices gravida accumsan lacus vel facilisis.</p>-->
+<!--          </div>-->
+<!--          <div class="ti-author">-->
+<!--            <div class="ta-pic">-->
+<!--              <img src="assets/img/testimonial-author/ta-1.jpg" alt="">-->
+<!--            </div>-->
+<!--            <div class="ta-text">-->
+<!--              <h5>Phan Văn Vũ</h5>-->
+<!--              <span>Designer</span>-->
+<!--              <div class="ta-rating">-->
+<!--                <i class="fa fa-star"></i>-->
+<!--                <i class="fa fa-star"></i>-->
+<!--                <i class="fa fa-star"></i>-->
+<!--                <i class="fa fa-star"></i>-->
+<!--                <i class="fa fa-star"></i>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="col-lg-6">-->
+<!--        <div class="testimonial-item">-->
+<!--          <div class="ti-text">-->
+<!--            <p>Lorem ipsum dolor amet, consectetur adipiscing elit, seiusmod tempor incididunt ut labore-->
+<!--              magna aliqua. Quis ipsum suspendisse ultrices gravida accumsan lacus vel facilisis.</p>-->
+<!--          </div>-->
+<!--          <div class="ti-author">-->
+<!--            <div class="ta-pic">-->
+<!--              <img src="assets/img/testimonial-author/ta-3.png" alt="">-->
+<!--            </div>-->
+<!--            <div class="ta-text">-->
+<!--              <h5>Phan Văn Vũ</h5>-->
+<!--              <span>Designer</span>-->
+<!--              <div class="ta-rating">-->
+<!--                <i class="fa fa-star"></i>-->
+<!--                <i class="fa fa-star"></i>-->
+<!--                <i class="fa fa-star"></i>-->
+<!--                <i class="fa fa-star"></i>-->
+<!--                <i class="fa fa-star"></i>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="col-lg-6">-->
+<!--        <div class="testimonial-item">-->
+<!--          <div class="ti-text">-->
+<!--            <p>Lorem ipsum dolor amet, consectetur adipiscing elit, seiusmod tempor incididunt ut labore-->
+<!--              magna aliqua. Quis ipsum suspendisse ultrices gravida accumsan lacus vel facilisis.</p>-->
+<!--          </div>-->
+<!--          <div class="ti-author">-->
+<!--            <div class="ta-pic">-->
+<!--              <img src="assets/img/testimonial-author/ta-1.jpg" alt="">-->
+<!--            </div>-->
+<!--            <div class="ta-text">-->
+<!--              <h5>Phan Văn Vũ</h5>-->
+<!--              <span>Designer</span>-->
+<!--              <div class="ta-rating">-->
+<!--                <i class="fa fa-star"></i>-->
+<!--                <i class="fa fa-star"></i>-->
+<!--                <i class="fa fa-star"></i>-->
+<!--                <i class="fa fa-star"></i>-->
+<!--                <i class="fa fa-star"></i>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+<!-- Testimonial Section End -->
+
+<!-- Logo Carousel Begin -->
+<!--<div class="logo-carousel">-->
+<!--  <div class="container">-->
+<!--    <div class="lc-slider owl-carousel">-->
+<!--      <a routerLink="/" class="lc-item">-->
+<!--        <div class="lc-item-inner">-->
+<!--          <img src="assets/img/logo-carousel/lc-1.png" alt="">-->
+<!--        </div>-->
+<!--      </a>-->
+<!--      <a routerLink="/" class="lc-item">-->
+<!--        <div class="lc-item-inner">-->
+<!--          <img src="assets/img/logo-carousel/lc-2.png" alt="">-->
+<!--        </div>-->
+<!--      </a>-->
+<!--      <a routerLink="/" class="lc-item">-->
+<!--        <div class="lc-item-inner">-->
+<!--          <img src="assets/img/logo-carousel/lc-3.png" alt="">-->
+<!--        </div>-->
+<!--      </a>-->
+<!--      <a routerLink="/" class="lc-item">-->
+<!--        <div class="lc-item-inner">-->
+<!--          <img src="assets/img/logo-carousel/lc-4.png" alt="">-->
+<!--        </div>-->
+<!--      </a>-->
+<!--      <a routerLink="/" class="lc-item">-->
+<!--        <div class="lc-item-inner">-->
+<!--          <img src="assets/img/logo-carousel/lc-5.png" alt="">-->
+<!--        </div>-->
+<!--      </a>-->
+<!--      <a routerLink="/" class="lc-item">-->
+<!--        <div class="lc-item-inner">-->
+<!--          <img src="assets/img/logo-carousel/lc-6.png" alt="">-->
+<!--        </div>-->
+<!--      </a>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<!-- Logo Carousel End -->

@@ -1,0 +1,58 @@
+<!-- Breadcrumb Section Begin -->
+<section class="breadcrumb-section spad set-bg" data-setbg="assets/img/breadcrumb-business.jpg">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="breadcrumb-text">
+          <h4>{{'register'|translate}}</h4>
+          <div class="bt-option">
+            <a href="/"><i class="fa fa-home"></i> {{'Home'|translate}}</a>
+            <span>{{'Register'|translate}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Breadcrumb Section End -->
+
+<!-- Contact Form Section Begin -->
+<section class="contact-form-section spad">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="cf-content">
+          <div class="cc-title">
+            <h4>{{'register'|translate}}</h4>
+            <p> {{'Fill out the form below if you need to contact us for real estate products or all related matters.'|translate}}</p>
+          </div>
+          <form action="#" class="cc-form">
+            <div class="group-input">
+              <input name="name" [(ngModel)]="registerUser.user.fullName" type="text" placeholder="{{'Full Name'|translate}}">
+              <input type="text" name="email" [(ngModel)]="registerUser.user.email" placeholder="Email">
+              <input type="text" name="username" [(ngModel)]="registerUser.user.username" placeholder="{{'Username'|translate}}">
+            </div>
+          </form>
+          <form action="#" class="cc-form">
+            <div class="group-input">
+              <input type="password" name="password" [(ngModel)]="registerUser.user.password" placeholder="{{'Password'|translate}}">
+              <input type="password" name="repassword" [(ngModel)]="registerUser.user.repassword" placeholder="{{'Confirm'|translate}}">
+              <input type="text" name="phone" [(ngModel)]="registerUser.phone" placeholder="{{'Phone Number'|translate}}">
+            </div>
+          </form>
+          <ckeditor [(ngModel)]="registerUser.content" [editor]="Editor" data="<p>Hello, world!</p>"
+                    (ready)="onReady($event)" name="contentEditor"></ckeditor>
+          <div class="col-md-12 pb-5">
+            <div class="custom-file">
+              <input type="file" (change)="selectFile($event,0)" class="custom-file-input" id="validatedCustomFile"
+                     required>
+              <label class="custom-file-label" for="validatedCustomFile">{{'Avatar'| translate}}</label>
+            </div>
+          </div>
+          <button type="submit" class="site-btn" (click)="signUpAsAgent()">{{'register'|translate}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Contact Form Section End -->

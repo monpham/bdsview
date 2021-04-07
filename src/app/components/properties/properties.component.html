@@ -1,0 +1,327 @@
+<!-- Breadcrumb Section Begin -->
+<section class="breadcrumb-section spad set-bg" data-setbg="assets/img/breadcrumb-bg.jpg">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="breadcrumb-text">
+          <h4>Hồ sơ</h4>
+          <div class="bt-option">
+            <a routerLink="/"><i class="fa fa-home"></i> Trang chủ</a>
+            <a routerLink="/agents">Chuyên gia</a>
+            <span>Hồ sơ</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Breadcrumb Section End -->
+
+<!-- Profile Section Begin -->
+<section class="profile-section spad">
+  <div class="container">
+    <div class="profile-agent-content" *ngIf="agent.id">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="profile-agent-info">
+            <div class="pi-pic">
+              <img src="assets/img/agents/profile-agent.jpg" alt="">
+              <div class="rating-point">
+                4.5
+              </div>
+            </div>
+            <div class="pi-text">
+              <h5>{{agent.user.fullName}}</h5>
+              <span>96 Âu Cơ, Hòa Khánh Bắc, Liên Chiểu, Đà Nẵng</span>
+              <p>Số bài đăng: 10/10</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="profile-agent-widget">
+            <ul>
+              <li>Bất động sản <span>215</span></li>
+              <li>Email <span>{{agent.user.email}}</span></li>
+              <li>Số điện thoại <span>{{agent.user.phone}}</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="profile-agent-newslatter">
+            <h5>Mua lượt đăng bài</h5>
+<!--            <a routerLink="/" class="buy-post" data-toggle="modal" data-target="#exampleModalLong">Chọn gói</a>-->
+
+            <!-- Button trigger modal -->
+            <button type="button" class="buy-post" data-toggle="modal" data-target="#exampleModalLong">
+              Chọn gói
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Chọn gói bài đăng</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="pricing">
+                      <input type="radio" name="pricing" id="intro"/>
+                      <label for="intro" class="pricing-check"></label>
+                      <div class="pricing-content">
+                        <div class="pricing-info">
+                          <h3 class="pricing-name">Gói 1</h3>
+                          <span class="pricing-saving">Sale %20</span>
+                        </div>
+                        <div class="pricing-price">
+                          <span class="pricing-money">$19</span>
+                          <span class="pricing-time">/ 10 bài</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pricing">
+                      <input type="radio" name="pricing" id="basic"/>
+                      <label for="basic" class="pricing-check"></label>
+                      <div class="pricing-content">
+                        <div class="pricing-info">
+                          <h3 class="pricing-name">Gói 2</h3>
+                          <span class="pricing-saving">Sale %20</span>
+                        </div>
+                        <div class="pricing-price">
+                          <span class="pricing-money">$39</span>
+                          <span class="pricing-time">/ 20 bài</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pricing">
+                      <input type="radio" name="pricing" id="pro"/>
+                      <label for="pro" class="pricing-check"></label>
+                      <div class="pricing-content">
+                        <div class="pricing-info">
+                          <h3 class="pricing-name">Gói 3</h3>
+                          <span class="pricing-saving">Sale %20</span>
+                        </div>
+                        <div class="pricing-price">
+                          <span class="pricing-money">$59</span>
+                          <span class="pricing-time">/ 50 bài</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-primary" style="background: #00c8a0; border: none" [(ngModel)]="number" (click)="paypal()">Mua</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+<!--            <form action="#">-->
+<!--              <input type="text" placeholder="Email">-->
+<!--              <button type="submit"><i class="fa fa-send"></i></button>-->
+<!--            </form>-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Profile Section End -->
+
+<!-- Property Section Begin -->
+<section class="property-section profile-page spad">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="property-item">
+          <div class="pi-pic set-bg" data-setbg="assets/img/property/property-1.jpg">
+            <div class="label">Cho thuê</div>
+          </div>
+          <div class="pi-text">
+            <a routerLink="/" class="heart-icon"><span class="icon_heart_alt"></span></a>
+            <div class="pt-price">VNĐ 289.0<span>/tháng</span></div>
+            <h5><a routerLink="/property">Golden Land city</a></h5>
+            <p><span class="icon_pin_alt"></span>Trương Thế Công</p>
+            <ul>
+              <li><i class="fa fa-object-group"></i> 2, 283</li>
+              <li><i class="fa fa-bathtub"></i> 03</li>
+              <li><i class="fa fa-bed"></i> 05</li>
+              <li><i class="fa fa-automobile"></i> 01</li>
+            </ul>
+<!--            <div class="pi-agent">-->
+<!--              <div class="pa-item">-->
+<!--                <div class="pa-info">-->
+<!--                  <img src="assets/img/property/posted-by/pb-1.jpg" alt="">-->
+<!--                  <h6>Nguyễn Hữu Tài</h6>-->
+<!--                </div>-->
+<!--                <div class="pa-text">-->
+<!--                  123-455-688-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="property-item">
+          <div class="pi-pic set-bg" data-setbg="assets/img/property/property-2.jpg">
+            <div class="label c-red">Rao bán</div>
+          </div>
+          <div class="pi-text">
+            <a routerLink="/" class="heart-icon"><span class="icon_heart_alt"></span></a>
+            <div class="pt-price">VNĐ 289.0</div>
+            <h5><a routerLink="/">Vin Pearl</a></h5>
+            <p><span class="icon_pin_alt"></span> 96 Âu Cơ, Hòa Khánh Bắc, Liên Chiểu, Đà Nẵng</p>
+            <ul>
+              <li><i class="fa fa-object-group"></i> 2, 283</li>
+              <li><i class="fa fa-bathtub"></i> 03</li>
+              <li><i class="fa fa-bed"></i> 05</li>
+              <li><i class="fa fa-automobile"></i> 01</li>
+            </ul>
+<!--            <div class="pi-agent">-->
+<!--              <div class="pa-item">-->
+<!--                <div class="pa-info">-->
+<!--                  <img src="assets/img/property/posted-by/pb-1.jpg" alt="">-->
+<!--                  <h6>Nguyễn Hữu Tài</h6>-->
+<!--                </div>-->
+<!--                <div class="pa-text">-->
+<!--                  123-455-688-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="property-item">
+          <div class="pi-pic set-bg" data-setbg="assets/img/property/property-2.jpg">
+            <div class="label c-red">Rao bán</div>
+          </div>
+          <div class="pi-text">
+            <a routerLink="/" class="heart-icon"><span class="icon_heart_alt"></span></a>
+            <div class="pt-price">VNĐ 289.0</div>
+            <h5><a routerLink="/">Vrindavan Flora</a></h5>
+            <p><span class="icon_pin_alt"></span> 135/6, Vũ Lăng, Cẩm Lệ, Đà Nẵng</p>
+            <ul>
+              <li><i class="fa fa-object-group"></i> 2, 283</li>
+              <li><i class="fa fa-bathtub"></i> 03</li>
+              <li><i class="fa fa-bed"></i> 05</li>
+              <li><i class="fa fa-automobile"></i> 01</li>
+            </ul>
+<!--            <div class="pi-agent">-->
+<!--              <div class="pa-item">-->
+<!--                <div class="pa-info">-->
+<!--                  <img src="assets/img/property/posted-by/pb-1.jpg" alt="">-->
+<!--                  <h6>Nguyễn Hữu Tài</h6>-->
+<!--                </div>-->
+<!--                <div class="pa-text">-->
+<!--                  123-455-688-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="property-item">
+          <div class="pi-pic set-bg" data-setbg="assets/img/property/property-4.jpg">
+            <div class="label c-red">Rao bán</div>
+          </div>
+          <div class="pi-text">
+            <a routerLink="/" class="heart-icon"><span class="icon_heart_alt"></span></a>
+            <div class="pt-price">VNĐ 289.0</div>
+            <h5><a routerLink="/">Shramik Vaibhav</a></h5>
+            <p><span class="icon_pin_alt"></span> 135/6, Vũ Lăng, Cẩm Lệ, Đà Nẵng</p>
+            <ul>
+              <li><i class="fa fa-object-group"></i> 2, 283</li>
+              <li><i class="fa fa-bathtub"></i> 03</li>
+              <li><i class="fa fa-bed"></i> 05</li>
+              <li><i class="fa fa-automobile"></i> 01</li>
+            </ul>
+<!--            <div class="pi-agent">-->
+<!--              <div class="pa-item">-->
+<!--                <div class="pa-info">-->
+<!--                  <img src="assets/img/property/posted-by/pb-1.jpg" alt="">-->
+<!--                  <h6>Nguyễn Hữu Tài</h6>-->
+<!--                </div>-->
+<!--                <div class="pa-text">-->
+<!--                  123-455-688-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="property-item">
+          <div class="pi-pic set-bg" data-setbg="assets/img/property/property-5.jpg">
+            <div class="label c-magenta">Đã bán</div>
+          </div>
+          <div class="pi-text">
+            <a routerLink="/" class="heart-icon"><span class="icon_heart_alt"></span></a>
+            <div class="pt-price">VNĐ 289.0</div>
+            <h5><a routerLink="/">Poddar Wondercity</a></h5>
+            <p><span class="icon_pin_alt"></span> 135/6, Vũ Lăng, Cẩm Lệ, Đà Nẵng</p>
+            <ul>
+              <li><i class="fa fa-object-group"></i> 2, 283</li>
+              <li><i class="fa fa-bathtub"></i> 03</li>
+              <li><i class="fa fa-bed"></i> 05</li>
+              <li><i class="fa fa-automobile"></i> 01</li>
+            </ul>
+<!--            <div class="pi-agent">-->
+<!--              <div class="pa-item">-->
+<!--                <div class="pa-info">-->
+<!--                  <img src="assets/img/property/posted-by/pb-1.jpg" alt="">-->
+<!--                  <h6>Nguyễn Hữu Tài</h6>-->
+<!--                </div>-->
+<!--                <div class="pa-text">-->
+<!--                  123-455-688-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="property-item">
+          <div class="pi-pic set-bg" data-setbg="assets/img/property/property-6.jpg">
+            <div class="label">Cho thuê</div>
+          </div>
+          <div class="pi-text">
+            <a routerLink="/" class="heart-icon"><span class="icon_heart_alt"></span></a>
+            <div class="pt-price">VNĐ 289.0<span>/tháng</span></div>
+            <h5><a routerLink="/">GoldCrest Residency</a></h5>
+            <p><span class="icon_pin_alt"></span> 135/6, Vũ Lăng, Cẩm Lệ, Đà Nẵng</p>
+            <ul>
+              <li><i class="fa fa-object-group"></i> 2, 283</li>
+              <li><i class="fa fa-bathtub"></i> 03</li>
+              <li><i class="fa fa-bed"></i> 05</li>
+              <li><i class="fa fa-automobile"></i> 01</li>
+            </ul>
+<!--            <div class="pi-agent">-->
+<!--              <div class="pa-item">-->
+<!--                <div class="pa-info">-->
+<!--                  <img src="assets/img/property/posted-by/pb-1.jpg" alt="">-->
+<!--                  <h6>Nguyễn Hữu Tài</h6>-->
+<!--                </div>-->
+<!--                <div class="pa-text">-->
+<!--                  123-455-688-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-12">
+        <div class="property-pagination">
+          <a routerLink="/">1</a>
+          <a routerLink="/">2</a>
+          <a routerLink="/">3</a>
+          <a routerLink="/" class="icon"><span class="arrow_right"></span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Property Section End -->

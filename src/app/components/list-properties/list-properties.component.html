@@ -1,0 +1,91 @@
+<!-- Breadcrumb Section Begin -->
+<!--      <ngx-spinner-->
+<!--        bdColor="rgba(0, 0, 0, 0.8)"-->
+<!--        size="medium"-->
+<!--        color="#fff"-->
+<!--        type="ball-scale-multiple" [fullScreen]="true" [name]="'loading_list'"-->
+<!--      >-->
+<!--        <p style="font-size: 20px; color: black"></p>-->
+<!--      </ngx-spinner>-->
+<section class="breadcrumb-section spad set-bg" data-setbg="assets/img/breadcrumb-bg.jpg">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="breadcrumb-text">
+          <h4>{{'Product'|translate}}</h4>
+          <div class="bt-option">
+            <a routerLink="/"><i class="fa fa-home"></i>{{'Home'|translate}}</a>
+            <span>{{'Product'|translate}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Breadcrumb Section End -->
+
+<section class="search-section spad">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7">
+        <div class="section-title">
+          <h4>{{'Search'|translate}}</h4>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="cf-content">
+          <form action="#" class="cc-form">
+            <div class="group-input">
+              <input (input)="onSearchChange($event.target.value)" [ngbTypeahead]="search" [(ngModel)]="term" name="username" type="text" placeholder="{{'Search'|translate}}">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Property Section Begin -->
+<section class="property-section spad">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="section-title">
+          <h4>{{'NEW UPDATED PROJECTS'|translate}}</h4>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 col-md-6" *ngFor="let property of properties | slice: (pageNews-1) * pageSize : pageNews * pageSize">
+        <div class="property-item">
+          <div class="pi-pic set-bg" [attr.data-setbg]="property.image" (click)="previewDetailProduct(property.id)">
+            <div class="label">{{'For sale'|translate}}</div>
+          </div>
+          <div class="pi-text">
+<!--            <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>-->
+            <div class="pt-price">{{property.giaTien | currency:"VND":"symbol"}} VNĐ<span>/tháng</span></div>
+            <h5><a routerLink="/" (click)="previewDetailProduct(property.id)">{{property.tenSanPham}}</a></h5>
+            <p><span class="icon_pin_alt"></span> {{property.diaChi}}</p>
+            <ul>
+              <li><i class="fa fa-object-group"></i> 2, 283</li>
+              <li><i class="fa fa-bathtub"></i> 03</li>
+              <li><i class="fa fa-bed"></i> 05</li>
+              <li><i class="fa fa-automobile"></i> 01</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+<!--      <div class="col-lg-12">-->
+<!--        <div class="loadmore-btn">-->
+<!--          <a routerLink="/">{{'Load more'|translate}}</a>-->
+<!--        </div>-->
+<!--      </div>-->
+    </div>
+    <ngb-pagination *ngIf="properties"
+                    (pageChange)="onPageChange()"
+                    [(page)]="pageNews"
+                    [pageSize]="pageSize"
+                    [collectionSize]="properties.length"></ngb-pagination>
+  </div>
+</section>
+<!-- Property Section End -->

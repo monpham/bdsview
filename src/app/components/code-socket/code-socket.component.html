@@ -1,0 +1,11 @@
+<div class="chat-window">
+  <div style="margin: 20px; background-color: white">
+    <kendo-chat style="height: 350px; border-style: solid; border-width: 1px; border-color: #0b0b0b; background-color:#78e08f; position: absolute; top: 20px"
+                [messages]="feed | async"
+                [user]="user"
+                (sendMessage)="sendMessage($event)"
+    >
+    </kendo-chat>
+  </div>
+  <app-chat-friend-list (onParticipantClicked)="onParticipantClickedFromFriendsList($event)"></app-chat-friend-list>
+</div>

@@ -1,0 +1,161 @@
+<!-- Breadcrumb Section Begin -->
+<ngx-spinner
+  bdColor="rgba(0, 0, 0, 0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-zig-zag-deflect" [fullScreen]="true" [name]="'loading_list'"
+>
+  <p style="font-size: 20px; color: black"></p>
+</ngx-spinner>
+<section class="breadcrumb-section spad set-bg" data-setbg="assets/img/breadcrumb-bg.jpg">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="breadcrumb-text">
+          <h4>{{'News'|translate}}</h4>
+          <div class="bt-option">
+            <a routerLink="/"><i class="fa fa-home"></i> {{'Home'|translate}}</a>
+            <span>{{'News'|translate}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Breadcrumb Section End -->
+
+<!-- Blog Section Begin -->
+<section class="blog-section spad">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="blog-item-list">
+          <div class="blog-item large-blog">
+            <div class="bi-pic">
+              <img src="assets/img/blog/blog-1.jpg" alt="">
+            </div>
+            <div class="bi-text">
+              <h4><a routerLink="/">5 LÝ DO NÊN ĐẦU TƯ VÀO DỰ ÁN RISEMOUNT APARTMENT ĐÀ NẴNG</a></h4>
+              <ul>
+                <li>{{'by'|translate}} <span>Đỗ Văn Liêm</span></li>
+                <li>24/9/2020</li>
+                <li>12 {{'Comment'|translate}}</li>
+              </ul>
+              <p>Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer
+                took a galley of type and scrambled it to make a type specimen book sentially unchanged...</p>
+              <a routerLink="/" class="read-more">{{'Read more'|translate}} <span class="arrow_right"></span></a>
+            </div>
+          </div>
+          <div *ngFor="let news of newsList" (click)="preview(news.id)">
+            <div *ngIf="news.active==true" class="blog-item">
+              <div class="bi-pic">
+                <img style="cursor: pointer" src="{{news.image}}" alt="">
+              </div>
+              <div class="bi-text" style="cursor: pointer">
+                <h5><a>{{news.title}}</a></h5>
+                <ul>
+                  <li>{{'by'|translate}} <span>Đỗ Văn Liêm</span></li>
+                  <li>24/9/2020</li>
+                  <li>12 {{'Comment'|translate}}</li>
+                </ul>
+                <p>{{news.description}}</p>
+                <a style="cursor: pointer" (click)="preview(news.id)" class="read-more">{{'Read more'|translate}} <span
+                  class="arrow_right"></span></a>
+              </div>
+            </div>
+          </div>
+          <div class="blog-item">
+            <div class="bi-pic">
+              <img src="assets/img/blog/blog-2.jpg" alt="">
+            </div>
+            <div class="bi-text">
+              <h5><a href="./blog-details.html">5 LÝ DO NÊN ĐẦU TƯ VÀO DỰ ÁN RISEMOUNT APARTMENT ĐÀ NẴNG</a></h5>
+              <ul>
+                <li>{{'by'|translate}} <span>Đỗ Văn Liêm</span></li>
+                <li>24/9/2020</li>
+                <li>12 {{'Comment'|translate}}</li>
+              </ul>
+              <p>Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown...</p>
+              <a routerLink="/" class="read-more">{{'Read more'|translate}} <span class="arrow_right"></span></a>
+            </div>
+          </div>
+        </div>
+        <div class="blog-pagination property-pagination ">
+          <a routerLink="/">1</a>
+          <a routerLink="/">2</a>
+          <a routerLink="/">3</a>
+          <a routerLink="/" class="icon"><span class="arrow_right"></span></a>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="blog-sidebar">
+          <div class="follow-us">
+            <div class="section-title sidebar-title-b">
+              <h6>{{'FOLLOW US'|translate}}</h6>
+            </div>
+            <div class="fu-links">
+              <a routerLink="/"><i class="fa fa-facebook"></i></a>
+              <a routerLink="/" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a routerLink="/" class="youtube"><i class="fa fa-youtube-play"></i></a>
+              <a routerLink="/" class="instagram"><i class="fa fa-instagram"></i></a>
+            </div>
+          </div>
+          <div class="feature-post">
+            <div class="section-title sidebar-title-b">
+              <h6>{{'Hot News'|translate}}</h6>
+            </div>
+            <div class="recent-post">
+              <div class="rp-item">
+                <div class="rp-pic">
+                  <img src="assets/img/blog/rp-1.jpg" alt="">
+                </div>
+                <div class="rp-text">
+                  <h6><a routerLink="/">Vancouver real estate advisurges conference goers...</a></h6>
+                  <span>24/9/2020</span>
+                </div>
+              </div>
+              <div class="rp-item">
+                <div class="rp-pic">
+                  <img src="assets/img/blog/rp-2.jpg" alt="">
+                </div>
+                <div class="rp-text">
+                  <h6><a routerLink="/">Vancouver real estate advisurges conference goers...</a></h6>
+                  <span>24/9/2020</span>
+                </div>
+              </div>
+              <div class="rp-item">
+                <div class="rp-pic">
+                  <img src="assets/img/blog/rp-3.jpg" alt="">
+                </div>
+                <div class="rp-text">
+                  <h6><a routerLink="/">Vancouver real estate advisurges conference goers...</a></h6>
+                  <span>24/9/2020</span>
+                </div>
+              </div>
+              <div class="rp-item">
+                <div class="rp-pic">
+                  <img src="assets/img/blog/rp-4.jpg" alt="">
+                </div>
+                <div class="rp-text">
+                  <h6><a routerLink="/">Vancouver real estate advisurges conference goers...</a></h6>
+                  <span>24/9/2020</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="subscribe-form">
+            <div class="section-title sidebar-title-b">
+              <h6>{{'Subscribe to receive notifications'|translate}}</h6>
+            </div>
+            <p>{{'Sign up to receive latest real estate alerts via Email.'|translate}}</p>
+            <form action="#">
+              <input type="text" placeholder="Email">
+              <button type="submit" class="site-btn">{{'Subscribe'|translate}}</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Blog Section End -->

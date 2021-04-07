@@ -1,0 +1,39 @@
+import {Routes} from "@angular/router";
+import {HomeComponent} from '../../components/home/home.component';
+import {PropertiesComponent} from '../../components/properties/properties.component';
+import {AgentsComponent} from '../../components/agents/agents.component';
+import {AboutComponent} from '../../components/about/about.component';
+import {NewsListComponent} from '../../components/news-list/news-list.component';
+import {ContactComponent} from '../../components/contact/contact.component';
+import {PropertyComponent} from '../../components/property/property.component';
+import {ListPropertiesComponent} from "../../components/list-properties/list-properties.component";
+import {PropertySaleComponent} from "../../components/property-sale/property-sale.component";
+import {PropertyRentComponent} from "../../components/property-rent/property-rent.component";
+import {ProjectComponent} from "../../components/project/project.component";
+import {NewsDetailComponent} from "../../components/news-detail/news-detail.component";
+import {RegisterComponent} from '../../components/register/register.component';
+import {LoginComponent} from '../../components/login/login.component';
+import {CodeSocketComponent} from '../../components/code-socket/code-socket.component';
+import {ResetpasswordComponent} from '../../components/resetpassword/resetpassword.component';
+
+export const AdminLayoutRoutes: Routes = [
+  {path: '', component: HomeComponent},
+  {path: 'properties', component: PropertiesComponent},
+  {path: 'agent', component: AgentsComponent},
+  {path: 'about', component: AboutComponent},
+  {path: 'news-list', component: NewsListComponent},
+  {path: 'news-detail', component: NewsDetailComponent},
+  {path: 'contact', component: ContactComponent},
+  {path: 'property-deltail', component: PropertyComponent},
+  {path: 'property/list-properties', component: ListPropertiesComponent},
+  {path: 'property/list-properties-for-sale', component: PropertySaleComponent},
+  {path: 'property/list-properties-for-rent', component: PropertyRentComponent},
+  {path: 'project/view-product', component: ListPropertiesComponent},
+  {path: 'list-product/view-detail-product', component: PropertyComponent},
+  {path: 'list-agent/view-detail-agent', component: PropertiesComponent},
+  {path: 'project', component: ProjectComponent},
+  {path: 'register', component: RegisterComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'chat-demo', component: CodeSocketComponent},
+  {path: 'reset_password', component: ResetpasswordComponent},
+];

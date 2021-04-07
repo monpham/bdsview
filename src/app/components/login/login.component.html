@@ -1,0 +1,42 @@
+<!-- Breadcrumb Section Begin -->
+<section class="breadcrumb-section spad set-bg" data-setbg="assets/img/breadcrumb-business.jpg">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="breadcrumb-text">
+          <h4>{{'Login'|translate}}</h4>
+          <div class="bt-option">
+            <a href="/"><i class="fa fa-home"></i> {{'Home'|translate}}</a>
+            <span>{{'Login'|translate}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Breadcrumb Section End -->
+
+<!-- Contact Form Section Begin -->
+<section class="contact-form-section spad">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="cf-content">
+          <div class="cc-title">
+            <h4>{{'Login'|translate}}</h4>
+          </div>
+          <form action="#" class="cc-form">
+            <div class="group-input">
+              <input name="username" [(ngModel)]="form.username" type="text" placeholder="{{'Username'|translate}}">
+              <input [(ngModel)]="form.password" type="password" name="password"  placeholder="{{'Password'|translate}}">
+            </div>
+          </form>
+          <button type="submit" class="site-btn" (click)="login()">{{'Login'|translate}}</button>
+          <br><br>
+           {{'Click here if'|translate}} <a style="color: #003eff" (click)="resetpassword()">{{'Forgot password ?'|translate}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Contact Form Section End -->
